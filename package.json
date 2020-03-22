@@ -33,5 +33,6 @@
 	},
 	"dependencies": {
 		"vsce": "^1.74.0"
-	}
+	},
+	"license": "MIT"
 }
