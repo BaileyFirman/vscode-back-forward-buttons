@@ -17,16 +17,16 @@ export const activate = () => {
 
 	const backButtonAlignment: IStatusBarItemAlignment = {
 		position: StatusBarAlignment.Left,
-		offset: 99999
+		offset: 1000
 	};
 
 	const forwardButtonAlignment: IStatusBarItemAlignment = {
 		position: StatusBarAlignment.Left,
-		offset: 99998
+		offset: 999
 	};
 
 	const backButton: StatusBarItem = buildButton(backButtonAlignment, IArrowIcon.Left, "workbench.action.navigateBack");
-	const forwardButton: StatusBarItem = buildButton(backButtonAlignment, IArrowIcon.Right, "workbench.action.navigateForward");
+	const forwardButton: StatusBarItem = buildButton(forwardButtonAlignment, IArrowIcon.Right, "workbench.action.navigateForward");
 
 	backButton.show();
 	forwardButton.show();
