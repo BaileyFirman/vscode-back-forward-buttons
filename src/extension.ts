@@ -1,14 +1,40 @@
 import * as vscode from 'vscode';
-import { StatusBarItem } from 'vscode';
+import { StatusBarItem, StatusBarAlignment } from 'vscode';
 
-export function activate() {
-	const backButton: StatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 99999);
-    backButton.text = `$(arrow-left)`;
-    backButton.command = "workbench.action.navigateBack";        
-    backButton.show();
+interface IStatusBarItemAlignment {
+	position: StatusBarAlignment;
+	offset: number;
+}
 
-    const forwardButton: StatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 99998);
-    forwardButton.text = `$(arrow-right)`;  
-    forwardButton.command = "workbench.action.navigateForward";  
+enum IArrowIcon {
+	Up = "$(arrow-up)",
+	Down = "$(arrow-down)",
+	Left = "$(arrow-left)",
+	Right = "$(arrow-right)"
+}
+
+export const activate = () => {
+
+	const backButtonAlignment: IStatusBarItemAlignment = {
+		position: StatusBarAlignment.Left,
+		offset: 99999
+	};
+
+	const forwardButtonAlignment: IStatusBarItemAlignment = {
+		position: StatusBarAlignment.Left,
+		offset: 99998
+	};
+
+	const backButton: StatusBarItem = buildButton(backButtonAlignment, IArrowIcon.Left, "workbench.action.navigateBack");
+	const forwardButton: StatusBarItem = buildButton(backButtonAlignment, IArrowIcon.Right, "workbench.action.navigateForward");
+
+	backButton.show();
 	forwardButton.show();
+}
+
+const buildButton = (alignment: IStatusBarItemAlignment, iconName: string, command: string) => {
+	const button: StatusBarItem = vscode.window.createStatusBarItem(alignment.position, alignment.offset);
+	button.text = iconName;
+	button.command = command;
+	return button;
 }
