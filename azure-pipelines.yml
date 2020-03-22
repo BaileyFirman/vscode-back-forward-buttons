@@ -20,5 +20,9 @@ steps:
   displayName: 'npm install'
 
 - script: |
+    npm install -g vsce
+  displayName: 'npm install vsce'
+
+- script: |
     vsce package
   displayName: 'vsce package'
