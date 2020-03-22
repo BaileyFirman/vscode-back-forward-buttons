@@ -30,5 +30,8 @@
 	"devDependencies": {
 		"typescript": "^3.8.0",
 		"@types/vscode": "^1.32.0"
+	},
+	"dependencies": {
+		"vsce": "^1.74.0"
 	}
 }
