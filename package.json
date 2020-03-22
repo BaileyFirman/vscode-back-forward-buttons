@@ -1,0 +1,34 @@
+{
+	"name": "vscode-back-forward-buttons",
+	"displayName": "Back and Forward Buttons",
+	"description": "Navigate forwards and backwards using buttons in the status bar",
+	"version": "0.0.1",
+	"publisher": "Bailey Firman",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/BaileyFirman/vscode-back-forward-buttons"
+	},
+	"bugs": {
+		"url": "https://github.com/BaileyFirman/vscode-back-forward-buttons/issues"
+	},
+	"engines": {
+		"vscode": "^1.32.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "tslint -p ./",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"typescript": "^3.8.0",
+		"@types/vscode": "^1.32.0"
+	}
+}
