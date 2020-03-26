@@ -17,24 +17,31 @@ export const activate = () => {
 
 	const backButtonAlignment: IStatusBarItemAlignment = {
 		position: StatusBarAlignment.Left,
-		offset: 1000
+		offset: 100000
 	};
 
 	const forwardButtonAlignment: IStatusBarItemAlignment = {
 		position: StatusBarAlignment.Left,
-		offset: 999
+		offset: 99999
 	};
 
-	const backButton: StatusBarItem = buildButton(backButtonAlignment, IArrowIcon.Left, "workbench.action.navigateBack");
-	const forwardButton: StatusBarItem = buildButton(forwardButtonAlignment, IArrowIcon.Right, "workbench.action.navigateForward");
+	const backButtonText: string = "Back: Alt+LeftArrow";
+	const forwardButtonText: string = "Forward: Alt+RightArrow";
+
+	const backButton: StatusBarItem = 
+		buildButton(backButtonAlignment, IArrowIcon.Left, "workbench.action.navigateBack", backButtonText);
+	
+	const forwardButton: StatusBarItem =
+		buildButton(forwardButtonAlignment, IArrowIcon.Right, "workbench.action.navigateForward", forwardButtonText);
 
 	backButton.show();
 	forwardButton.show();
 }
 
-const buildButton = (alignment: IStatusBarItemAlignment, iconName: string, command: string) => {
+const buildButton = (alignment: IStatusBarItemAlignment, iconName: string, command: string, tooltip: string) => {
 	const button: StatusBarItem = vscode.window.createStatusBarItem(alignment.position, alignment.offset);
 	button.text = iconName;
 	button.command = command;
+	button.tooltip = tooltip;
 	return button;
 }

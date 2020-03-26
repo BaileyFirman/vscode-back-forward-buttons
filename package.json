@@ -2,7 +2,7 @@
 	"name": "vscode-back-forward-buttons",
 	"displayName": "Back and Forward Buttons",
 	"description": "Navigate forwards and backwards using buttons in the status bar",
-	"version": "0.0.2",
+	"version": "1.0.0",
 	"publisher": "baileyfirman",
 	"repository": {
 		"type": "git",
