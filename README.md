@@ -1,5 +1,7 @@
 # VSCode Back and Forward Buttons
 [![Build Status](https://dev.azure.com/bfirman/bfirman/_apis/build/status/BaileyFirman.vscode-back-forward-buttons%20?branchName=master)](https://dev.azure.com/bfirman/bfirman/_build/latest?definitionId=2&branchName=master)
+[![Installs](https://vsmarketplacebadge.apphb.com/installs-short/baileyfirman.vscode-back-forward-buttons.svg)](https://vsmarketplacebadge.apphb.com/installs-short/baileyfirman.vscode-back-forward-buttons.svg)
+
 
 ##### Visual Studio like back and forward button support for Visual Studio Code.
 
